@@ -3,7 +3,7 @@ FROM ruby:latest
 SHELL ["/bin/bash", "-c"]
 
 ENV DEBIAN_FRONTEND noninter active
-ENV LANG ${lang}
+ENV LANG C
 ENV TZ Asia/Tokyo
 
 WORKDIR /app/service
@@ -11,8 +11,9 @@ WORKDIR /app/service
 COPY Gemfile* /app/service/
 
 RUN apt -y update && apt -y upgrade &&\
-    apt-get install -y build-essential libpq-dev nodejs &&\
-    bundle install
+    apt install -y build-essential libpq-dev nodejs &&\
+    bundle install &&\
+    rm -rf /var/lib/apt/lists/*
 
 EXPOSE 3000
 

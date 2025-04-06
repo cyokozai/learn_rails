@@ -4,6 +4,4 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - type: bind
-        source: ./service
-        target: /service
+      - ./service:/app/service
