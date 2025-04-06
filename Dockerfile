@@ -1,5 +1,11 @@
 FROM ruby:latest
 
+SHELL ["/bin/bash", "-c"]
+
+ENV DEBIAN_FRONTEND noninter active
+ENV LANG ${lang}
+ENV TZ Asia/Tokyo
+
 WORKDIR /app/service
 
 COPY Gemfile* /app/service/
