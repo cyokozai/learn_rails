@@ -7,4 +7,3 @@
 ## Environment
 
 - [Ruby Gems](https://rubygems.org/)
-- 

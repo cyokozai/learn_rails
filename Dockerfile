@@ -1,8 +1,8 @@
 FROM ruby:latest
 
-WORKDIR /service
+WORKDIR /app/service
 
-COPY Gemfile* /service/
+COPY Gemfile* /app/service/
 
 RUN apt -y update && apt -y upgrade &&\
     apt-get install -y build-essential libpq-dev nodejs &&\
